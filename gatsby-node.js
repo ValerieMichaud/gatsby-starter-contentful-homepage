@@ -235,6 +235,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       content: [HomepageProduct]
     }
 
+    interface HomepageBanner2 implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      text: String
+    }
+
     interface Homepage implements Node {
       id: ID!
       title: String
@@ -500,6 +507,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       kicker: String
       text: String
       content: [HomepageProduct] @link(from: "content___NODE")
+    }
+
+    type ContentfulHomepageBanner2 implements Node & HomepageBanner2 & HomepageBlock
+      @dontInfer {
+      id: ID!
+      blocktype: String @blocktype
+      heading: String!
+      text: String
     }
 
     type ContentfulHomepage implements Node & Homepage @dontInfer {
