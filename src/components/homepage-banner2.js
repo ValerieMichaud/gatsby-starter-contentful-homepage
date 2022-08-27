@@ -17,6 +17,7 @@ export default function HomepageBanner2(props) {
   return (
     <Section>
       <Container>
+          HOMEPAGE BANNER 2
         <Flex gap={4} variant="responsive">
           <Box width="half">
             ssdfsfsfsdfsdf
